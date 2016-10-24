@@ -1,0 +1,103 @@
+QWidget {
+    background-color: #000;
+}
+
+QPushButton{
+    color: #fff;
+    font-family:'Arial';
+	font-weight: bold;
+    font-size:16px;
+    border: 2px solid #555;
+    border-radius: 10px;
+    padding: 7px;
+    max-width:30px; min-width: 30px;
+    max-height:45px; min-height:45px;
+    outline: none;
+}
+
+QPushButton#s{
+    background: qradialgradient(cx:0.5, cy:0.5, fx:0.5, fy:0.5,
+    radius: 0.6, stop: 0 #f68, stop: 1 #000);
+}
+QPushButton#s:hover {
+    background: qradialgradient(cx:0.5, cy:0.5, fx:0.5, fy:0.5,
+    radius: 0.6, stop: 0 #000, stop: 1 #f68);
+}
+QPushButton#s:pressed {
+    background: qradialgradient(cx:0.5, cy:0.5, fx:0.5, fy:0.5,
+    radius: 0.5, stop: 0 #834, stop: 1 #f68);
+	border: 2px solid #aaa;
+}
+QPushButton#s[selected = "true"] {
+    background: #f68;
+	border: 2px solid #aaa;
+}
+
+QPushButton#p {
+    background: qradialgradient(cx:0.5, cy:0.5, fx:0.5, fy:0.5,
+    radius: 0.6, stop: 0 #fa0, stop: 1 #000);
+}
+QPushButton#p:hover {
+    background: qradialgradient(cx:0.5, cy:0.5, fx:0.5, fy:0.5,
+    radius: 0.6, stop: 0 #000, stop: 1 #fa0);
+}
+QPushButton#p:pressed {
+    background: qradialgradient(cx:0.5, cy:0.5, fx:0.5, fy:0.5,
+    radius: 0.5, stop: 0 #850, stop: 1 #fa0);
+	border: 2px solid #aaa;
+}
+QPushButton#p[selected = "true"]{
+    background: #fa0;
+	border: 2px solid #aaa;
+}
+
+QPushButton#d {
+    background: qradialgradient(cx:0.5, cy:0.5, fx:0.5, fy:0.5,
+    radius: 0.6, stop: 0 #60f, stop: 1 #000);
+}
+QPushButton#d:hover {
+    background: qradialgradient(cx:0.5, cy:0.5, fx:0.5, fy:0.5,
+    radius: 0.6, stop: 0 #000, stop: 1 #60f);
+}
+QPushButton#d:pressed {
+    background: qradialgradient(cx:0.5, cy:0.5, fx:0.5, fy:0.5,
+    radius: 0.5, stop: 0 #308, stop: 1 #60f);
+	border: 2px solid #aaa;
+}
+QPushButton#d[selected = "true"]{
+    background: #60f;
+	border: 2px solid #aaa;
+}
+
+QPushButton#f {
+    background: qradialgradient(cx:0.5, cy:0.5, fx:0.5, fy:0.5,
+    radius: 0.6, stop: 0 #0a0, stop: 1 #000);
+}
+QPushButton#f:hover {
+    background: qradialgradient(cx:0.5, cy:0.5, fx:0.5, fy:0.5,
+    radius: 0.6, stop: 0 #000, stop: 1 #0a0);
+}
+QPushButton#f:pressed {
+    background: qradialgradient(cx:0.5, cy:0.5, fx:0.5, fy:0.5,
+    radius: 0.5, stop: 0 #060, stop: 1 #0a0);
+	border: 2px solid #aaa;
+}
+QPushButton#f[selected = "true"] {
+    background: #0a0;
+	border: 2px solid #aaa;
+}	
+
+QPushButton#empty {
+    color: #000;
+    background: #000;
+    border: 2px solid #000;
+}
+
+
+QLabel{
+    font-family:'Arial',bold;
+    font-size:16px;
+	color: #aaa;
+}
+
+
