@@ -52,27 +52,29 @@ class Details(QtGui.QWidget):
         str(el.name) + "</p>")
 
         self.label2.setText(
-        "<tr><td> K              </td><td align='right'>" + ("%.2f"%el.absorption_k if el.absorption_k else   "") + "</td></tr>" +
-        "<tr><td>L<sub>I</sub>   </td><td align='right'>" + ("%.2f"%el.absorption_l1 if el.absorption_l1 else "") + "</td></tr>" +
-        "<tr><td>L<sub>II</sub>  </td><td align='right'>" + ("%.2f"%el.absorption_l2 if el.absorption_l2 else "") + "</td></tr>" +
-        "<tr><td>L<sub>III</sub> </td><td align='right'>" + ("%.2f"%el.absorption_l3 if el.absorption_l3 else "") + "</td></tr>")
+        "<tr><td> K              </td><td align='right'>" + ("%d"%el.absorption_k if el.absorption_k else   "") + "</td></tr>" +
+        "<tr><td>L<sub>I</sub>   </td><td align='right'>" + ("%d"%el.absorption_l1 if el.absorption_l1 else "") + "</td></tr>" +
+        "<tr><td>L<sub>II</sub>  </td><td align='right'>" + ("%d"%el.absorption_l2 if el.absorption_l2 else "") + "</td></tr>" +
+        "<tr><td>L<sub>III</sub> </td><td align='right'>" + ("%d"%el.absorption_l3 if el.absorption_l3 else "") + "</td></tr>")
         
         self.label3.setText(
-        "<tr><td>K<sub>&alpha;1</sub>  </td><td align='right'>" + ("%.2f"%el.emission_ka1 if el.emission_ka1 else "") + "</td></tr>" +
-        "<tr><td>K<sub>&alpha;2</sub>  </td><td align='right'>" + ("%.2f"%el.emission_ka2 if el.emission_ka2 else "") + "</td></tr>" +
-        "<tr><td>K<sub>&beta;1</sub>   </td><td align='right'>" + ("%.2f"%el.emission_kb1 if el.emission_kb1 else "") + "</td></tr>" +
-        "<tr><td>L<sub>&alpha;1</sub>  </td><td align='right'>" + ("%.2f"%el.emission_la1 if el.emission_la1 else "") + "</td></tr>" +
-        "<tr><td>L<sub>&alpha;2</sub>  </td><td align='right'>" + ("%.2f"%el.emission_la2 if el.emission_la2 else "") + "</td></tr>" +
-        "<tr><td>L<sub>&beta;1</sub>   </td><td align='right'>" + ("%.2f"%el.emission_lb1 if el.emission_lb1 else "") + "</td></tr>" +
-        "<tr><td>L<sub>&beta;2</sub>   </td><td align='right'>" + ("%.2f"%el.emission_lb2 if el.emission_lb2 else "") + "</td></tr>" +
-        "<tr><td>L<sub>&gamma;1</sub>  </td><td align='right'>" + ("%.2f"%el.emission_lg1 if el.emission_lg1 else "") + "</td></tr>" )
+        "<tr><td>K<sub>&alpha;1</sub>  </td><td align='right'>" + ("%d"%el.emission_ka1 if el.emission_ka1 else "") + "</td></tr>" +
+        "<tr><td>K<sub>&alpha;2</sub>  </td><td align='right'>" + ("%d"%el.emission_ka2 if el.emission_ka2 else "") + "</td></tr>" +
+        "<tr><td>K<sub>&beta;1</sub>   </td><td align='right'>" + ("%d"%el.emission_kb1 if el.emission_kb1 else "") + "</td></tr>" +
+        "<tr><td>L<sub>&alpha;1</sub>  </td><td align='right'>" + ("%d"%el.emission_la1 if el.emission_la1 else "") + "</td></tr>" +
+        "<tr><td>L<sub>&alpha;2</sub>  </td><td align='right'>" + ("%d"%el.emission_la2 if el.emission_la2 else "") + "</td></tr>" +
+        "<tr><td>L<sub>&beta;1</sub>   </td><td align='right'>" + ("%d"%el.emission_lb1 if el.emission_lb1 else "") + "</td></tr>" +
+        "<tr><td>L<sub>&beta;2</sub>   </td><td align='right'>" + ("%d"%el.emission_lb2 if el.emission_lb2 else "") + "</td></tr>" +
+        "<tr><td>L<sub>&gamma;1</sub>  </td><td align='right'>" + ("%d"%el.emission_lg1 if el.emission_lg1 else "") + "</td></tr>" )
         
         
         
 class MainWidget(QtGui.QWidget):
     def __init__(self, parent=None):
+        N_GROUPS = 18 # long version
+        N_PERIODS = 9 # 7 + lantanoids + actinoids
         QtGui.QWidget.__init__(self, parent)
-        self.setWindowTitle('Periodic Table Xray')
+        self.setWindowTitle('Edge Selector')
         self.buttons = []
         layout = QtGui.QGridLayout(self)
         for el in ELEMENTS:
