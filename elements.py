@@ -1716,7 +1716,7 @@ ELEMENTS = ElementsDict(
         group=12, period=7, block='d', series=8,
         mass=285),
     Element(
-        113, 'Uut', 'Ununtrium',
+        113, 'Nh', 'Nihonium',
         group=13, period=7, block='p', series=8,
         mass=284),
     Element(
@@ -1724,7 +1724,7 @@ ELEMENTS = ElementsDict(
         group=14, period=7, block='p', series=8,
         mass=289),
     Element(
-        115, 'Uup', 'Ununpentium',
+        115, 'Mc', 'Moscovium',
         group=15, period=7, block='p', series=8,
         mass=288),
     Element(
@@ -1732,11 +1732,11 @@ ELEMENTS = ElementsDict(
         group=16, period=7, block='p', series=8,
         mass=293),
     Element(
-        117, 'Uus', 'Ununseptium',
+        117, 'Ts', 'Tennessine',
         group=17, period=7, block='p', series=8,
         mass=292),
     Element(
-        118, 'Uuo', 'Ununoctium',
+        118, 'Og', 'Oganesson',
         group=18, period=7, block='p', series=8,
         mass=294)
 )

@@ -20,10 +20,10 @@ for el in ELEMENTS:
 
     
 def readStyleSheet(fileName) :
-    css = Qt.QString()
+    css = ""
     file = Qt.QFile(fileName)
     if file.open(Qt.QIODevice.ReadOnly):
-        css = Qt.QString(file.readAll())
+        css = str(file.readAll())
         file.close()
     return css
 
@@ -71,10 +71,9 @@ class Details(QtGui.QWidget):
         
 class MainWidget(QtGui.QWidget):
     def __init__(self, parent=None):
-        N_GROUPS = 18 # long version
-        N_PERIODS = 9 # 7 + lantanoids + actinoids
+
         QtGui.QWidget.__init__(self, parent)
-        self.setWindowTitle('Edge Selector')
+        self.setWindowTitle('Periodic Table Xray')
         self.buttons = []
         layout = QtGui.QGridLayout(self)
         for el in ELEMENTS:
