@@ -1,7 +1,7 @@
 from elements import ELEMENTS
 from lines import emission_lines, absorption_lines
 import sys
-from PyQt4 import Qt, QtGui, QtCore
+from PyQt5 import QtWidgets, QtCore
 
 for el in ELEMENTS:
     el.emission_ka1 = 1000*emission_lines.get(el.number, [0]*8)[0]
@@ -21,20 +21,21 @@ for el in ELEMENTS:
     
 def readStyleSheet(fileName) :
     css = ""
-    file = Qt.QFile(fileName)
-    if file.open(Qt.QIODevice.ReadOnly):
-        css = str(file.readAll())
+    file = QtCore.QFile(fileName)
+    if file.open(QtCore.QIODevice.ReadOnly):
+        # python 3
+        css = str(file.readAll(), encoding = "utf-8") 
         file.close()
     return css
 
 
-class Details(QtGui.QWidget):
+class Details(QtWidgets.QWidget):
     def __init__(self, parent=None):
-        QtGui.QWidget.__init__(self, parent)            
-        layout = QtGui.QHBoxLayout()
-        self.label1 = QtGui.QLabel()
-        self.label2 = QtGui.QLabel()
-        self.label3 = QtGui.QLabel()
+        QtWidgets.QWidget.__init__(self, parent)            
+        layout = QtWidgets.QHBoxLayout()
+        self.label1 = QtWidgets.QLabel()
+        self.label2 = QtWidgets.QLabel()
+        self.label3 = QtWidgets.QLabel()
 
         layout.addWidget(self.label1)
         layout.addWidget(self.label2)
@@ -69,15 +70,15 @@ class Details(QtGui.QWidget):
         
         
         
-class MainWidget(QtGui.QWidget):
+class MainWidget(QtWidgets.QWidget):
     def __init__(self, parent=None):
 
-        QtGui.QWidget.__init__(self, parent)
+        QtWidgets.QWidget.__init__(self, parent)
         self.setWindowTitle('Periodic Table Xray')
         self.buttons = []
-        layout = QtGui.QGridLayout(self)
+        layout = QtWidgets.QGridLayout(self)
         for el in ELEMENTS:
-            but = QtGui.QPushButton(str(el.number) + "\n" + str(el.symbol))
+            but = QtWidgets.QPushButton(str(el.number) + "\n" + str(el.symbol))
             self.buttons.append(but)
             but.setObjectName(el.block)
             but.number = el.number
@@ -93,6 +94,7 @@ class MainWidget(QtGui.QWidget):
         layout.addWidget(self.detailsWidget, 0, 3, 3, 8)    
         self.setLayout(layout)
         self.setStyleSheet(readStyleSheet('blackstyle.css'))
+
     
     def changeElement(self):
         s = self.sender()
@@ -106,7 +108,7 @@ class MainWidget(QtGui.QWidget):
 
 def main():
     
-    app = QtGui.QApplication(sys.argv)
+    app = QtWidgets.QApplication(sys.argv)
 
     w = MainWidget()
     w.setFixedSize(900, 600)
